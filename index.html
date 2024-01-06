@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* CSS */
+      body {
+        background-color: brown;
+      }
+
+      #target {
+        background-color: blue;
+      }
+    </style>
+    <script type="application/javascript">
+      // alert("Hi");
+
+      const el = document.getElementById("target");
+
+      console.log(el); // el === null
+    </script>
+  </head>
+
+  <body>
+    <h1>Hello World</h1>
+    <h2 id="target">Hi</h2>
+
+    <input />
+  </body>
+
+  <script type="application/javascript">
+    // 스크립트는 어느 곳에나 위치 가능하지만 스크립트 자신보다 아래에 선언된 엘리먼트를 읽을 수 없음
+    const target = document.getElementById("target");
+
+    const inputEl = document.querySelector("input");
+    inputEl.addEventListener("input", (ev) => {
+      target.innerText = ev.target.value;
+    });
+  </script>
+</html>
